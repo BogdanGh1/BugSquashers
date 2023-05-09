@@ -18,5 +18,16 @@ public class User {
     private String password;
     private String description;
     private String birthdate;
-    private UserType type;
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
+
+    public User(String username, String password, String description, String birthdate) {
+        this.username = username;
+        this.password = password;
+        this.description = description;
+        this.birthdate = birthdate;
+    }
 }

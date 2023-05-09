@@ -9,8 +9,7 @@ import java.util.List;
 
 @Repository
 public interface ActivityRepository extends MongoRepository<Activity, ObjectId> {
-    List<Activity> findAllByChildUsername(String username);
+    List<Activity> findByChild_IdOrAdult_Id(ObjectId childId, ObjectId adultId);
+
 
 }
-//644fe67e6c9e5e3ea9448a5d
-//644fece26c9e5e3ea9448a66
