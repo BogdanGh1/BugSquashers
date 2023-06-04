@@ -1,8 +1,10 @@
 package bug.squashers.RestAPI.business;
 
 import bug.squashers.RestAPI.infrastructure.ActivityRepository;
+import bug.squashers.RestAPI.infrastructure.ChildRepository;
 import bug.squashers.RestAPI.infrastructure.UserRepository;
 import bug.squashers.RestAPI.model.Activity;
+import bug.squashers.RestAPI.model.Child;
 import bug.squashers.RestAPI.model.User;
 import bug.squashers.RestAPI.utils.Utils;
 import org.bson.types.ObjectId;
@@ -18,6 +20,8 @@ public class Service {
     private UserRepository userRepository;
     @Autowired
     private ActivityRepository activityRepository;
+    @Autowired
+    private ChildRepository childRepository;
 
     public List<User> findAllUsers() {
         return userRepository.findAll();
@@ -43,5 +47,13 @@ public class Service {
 
         String formattedDate = Utils.getFormattedDate(date);
         return userRepository.insert(new User(username,password,description,formattedDate));
+    }
+
+    public List<Child> findAllChildren() {
+        return childRepository.findAll();
+    }
+
+    public Optional<Child> findChildByName(String name) {
+        return childRepository.findByName(name);
     }
 }

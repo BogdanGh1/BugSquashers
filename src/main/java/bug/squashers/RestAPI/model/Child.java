@@ -20,5 +20,6 @@ public class Child {
     private List<String> favoriteActivities;
     private String description;
     private String birthdate;
+    private String photoURI;
 
 }
