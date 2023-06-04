@@ -27,4 +27,5 @@ public class ChildController {
     public ResponseEntity<Optional<Child>> getChildByUsername(@PathVariable String name){
         return new ResponseEntity<Optional<Child>>(service.findChildByName(name), HttpStatus.OK);
     }
+
 }

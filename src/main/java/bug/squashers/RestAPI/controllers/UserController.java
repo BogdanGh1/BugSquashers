@@ -25,8 +25,8 @@ public class UserController {
         return new ResponseEntity<List<User>>(service.findAllUsers(), HttpStatus.OK);
     }
     @GetMapping("/{username}")
-    public ResponseEntity<Optional<User>> getUserByUsername(@PathVariable String username){
-        return new ResponseEntity<Optional<User>>(service.findUserByUsername(username), HttpStatus.OK);
+    public ResponseEntity<User> getUserByUsername(@PathVariable String username){
+        return new ResponseEntity<User>(service.findUserByUsername(username), HttpStatus.OK);
     }
 
     @PostMapping()
