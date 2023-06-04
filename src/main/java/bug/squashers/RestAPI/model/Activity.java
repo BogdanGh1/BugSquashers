@@ -17,7 +17,7 @@ public class Activity {
     private ObjectId id;
 
     @DocumentReference
-    private User child;
+    private Child child;
 
     @DocumentReference
     private User adult;
