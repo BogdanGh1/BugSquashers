@@ -68,7 +68,6 @@ public class Service {
     public Optional<User> findUser(String userName) {
         return userRepository.findByUsername(userName);
     }
-}
 
     public Optional<Child> findChildByName(String name) {
         return childRepository.findByName(name);
