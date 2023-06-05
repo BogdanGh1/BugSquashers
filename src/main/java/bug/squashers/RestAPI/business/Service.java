@@ -1,14 +1,15 @@
 package bug.squashers.RestAPI.business;
 
 import bug.squashers.RestAPI.infrastructure.ActivityRepository;
+import bug.squashers.RestAPI.infrastructure.ChildRepository;
 import bug.squashers.RestAPI.infrastructure.UserRepository;
 import bug.squashers.RestAPI.model.Activity;
+import bug.squashers.RestAPI.model.Child;
 import bug.squashers.RestAPI.model.User;
 import bug.squashers.RestAPI.utils.Utils;
 import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -17,8 +18,16 @@ public class Service {
     @Autowired
     private UserRepository userRepository;
     @Autowired
+    private ChildRepository childRepository;
+    @Autowired
     private ActivityRepository activityRepository;
+    public List<Child> findAllChildren() {
+        return childRepository.findAll();
+    }
 
+    public Optional<Child> findChildByUsername(String name) {
+        return childRepository.findByName(name);
+    }
     public List<User> findAllUsers() {
         return userRepository.findAll();
     }
