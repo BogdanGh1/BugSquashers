@@ -19,6 +19,10 @@ public class User {
     private String description;
     private String birthdate;
 
+    private boolean verified;
+    private double lat;
+    private double lng;
+
     public User(String username, String password) {
         this.username = username;
         this.password = password;
@@ -28,6 +32,6 @@ public class User {
         this.username = username;
         this.password = password;
         this.description = description;
-        this.birthdate = birthdate;
     }
+
 }

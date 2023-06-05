@@ -21,5 +21,8 @@ public class Child {
     private String description;
     private String birthdate;
     private String photoURI;
+    private double lat;
+    private double lng;
+
 
 }
